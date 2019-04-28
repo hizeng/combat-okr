@@ -1,0 +1,12 @@
+.welcome_content_bg{
+    height: 800rpx;
+    background-color: black;
+    opacity: 0.618;
+    color: #ccc;
+    padding-top:50rpx;
+}
+.button{   
+    position: absolute;
+    bottom: 50rpx;
+    width: 80%;
+}

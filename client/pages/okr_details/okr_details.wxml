@@ -1,0 +1,70 @@
+<view class="container">
+    <view class="title">
+        <text>我是目标详情</text>
+    </view>
+    <scroll-view class="key_result_view">
+        <view class="key_result_content">
+            <view class="key_result_title_content">
+                <text class="key_result_title">我是keysult的标题1</text>
+                <button class="title_button">标记</button>
+            </view>
+            <view class="key_result_todo_view">
+                <text class="todo_item">我是TODO的子项1</text>
+            </view>
+            <view class="key_result_todo_view">
+                <text class="todo_item">我是TODO的子项2</text>
+            </view>
+            <view class="key_result_todo_view">
+                <text class="todo_item">我是TODO的子项3</text>
+            </view>
+        </view>
+
+        <view class="key_result_content">
+            <view class="key_result_title_content">
+                <text class="key_result_title">我是keysult的标题2</text>
+                <button class="title_button">标记</button>
+            </view>
+            <view class="key_result_todo_view">
+                <text class="todo_item">我是TODO的子项1</text>
+            </view>
+            <view class="key_result_todo_view">
+                <text class="todo_item">我是TODO的子项2</text>
+            </view>
+            <view class="key_result_todo_view">
+                <text class="todo_item">我是TODO的子项3</text>
+            </view>
+        </view>
+
+        <view class="key_result_content">
+            <view class="key_result_title_content">
+                <text class="key_result_title">我是keysult的标题3</text>
+                <button class="title_button">标记</button>
+            </view>
+            <view class="key_result_todo_view">
+                <text class="todo_item">我是TODO的子项1</text>
+            </view>
+            <view class="key_result_todo_view">
+                <text class="todo_item">我是TODO的子项2</text>
+            </view>
+            <view class="key_result_todo_view">
+                <text class="todo_item">我是TODO的子项3</text>
+            </view>
+        </view>
+
+        <view class="key_result_content">
+            <view class="key_result_title_content">
+                <text class="key_result_title">我是keysult的标题4</text>
+                <button class="title_button">标记</button>
+            </view>
+            <view class="key_result_todo_view">
+                <text class="todo_item">我是TODO的子项1</text>
+            </view>
+            <view class="key_result_todo_view">
+                <text class="todo_item">我是TODO的子项2</text>
+            </view>
+            <view class="key_result_todo_view">
+                <text class="todo_item">我是TODO的子项3</text>
+            </view>
+        </view>        
+    </scroll-view>
+</view>

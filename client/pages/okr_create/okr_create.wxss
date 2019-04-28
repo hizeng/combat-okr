@@ -1,0 +1,12 @@
+.input_okr_create_view{
+
+}
+.input_okr_create{
+
+}
+.okr_create_content{
+    margin-top: 50rpx;
+}
+.add_button{
+    margin-top:50rpx;
+}

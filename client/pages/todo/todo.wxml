@@ -1,0 +1,14 @@
+<view class="container">
+    <view class="input_content">
+        <input class="input_body" type="text" placeholder="添加请输入Todo"></input>
+    </view>
+
+    <view class="todo_view">
+        <view class="todo_content" bind:tap="handleClickTodo">
+            <text>任务1TODO了劳斯莱斯</text>
+        </view>
+        <view class="todo_content">
+            <text>任务1TODO了劳斯莱斯</text>
+        </view>
+    </view>
+</view>

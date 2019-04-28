@@ -1,0 +1,12 @@
+<view class="container">
+    <view class="view">
+        <view class="welcome_content_bg">
+            <text>美丽的欢迎体验背景</text>
+        </view>
+        <view class="button">
+            <button bind:tap="handleLogin">
+                体验一下
+            </button>
+        </view>
+    </view>
+</view>

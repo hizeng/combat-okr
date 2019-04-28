@@ -1,0 +1,32 @@
+.input_okr_create_view{
+    width: 100%;
+    margin-top: 50rpx;   
+}
+.okr_create_content{
+    width: 100%;
+    margin-top: 50rpx;
+}
+
+
+.input_okr_create{
+    display: inline-block;
+    width: 80%; 
+}
+
+.input_default_okr{
+    display: inline-block;
+    width: 80%;
+}
+
+.input_button{
+    display: inline-block;
+    width: 19%;
+    height: 100rpx;
+    font-size: 50rpx;
+    line-height: 100rpx;
+}
+.add_button{
+    width: 80%;
+    position: absolute;
+    bottom: 50rpx;
+}

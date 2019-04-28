@@ -1,0 +1,19 @@
+<view class="container">
+    <view class="title">
+        <text>okr列表</text>
+    </view>
+
+    <view class="view okr_view">
+        <view class = "okr_content">
+            <view class="okr_item" bind:tap="handelClickOkr">
+                <text>这是一条okr的信息</text>
+            </view>
+        </view>
+
+
+    <!-- 新增okr子项 -->
+        <view class = "create_button_view" >
+            <button bind:tap="handelClickCreate">确认新建</button>
+        </view>
+    </view>
+</view>

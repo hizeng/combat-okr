@@ -1,0 +1,13 @@
+.keyresult_content{
+    width: 100%;
+    height: 100rpx;
+    line-height: 100rpx;
+    background-color: #ccc;
+    opacity:0.618;
+    margin-top:20rpx;
+    border-radius: 20rpx;
+}
+.hover_kr_content{
+    background-color: black;
+    color: #fff;
+}
