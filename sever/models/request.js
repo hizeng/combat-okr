@@ -1,12 +1,15 @@
 const axios = require('axios');
 
-const WXAPI = 'https://api.weixin.qq.com/sns/jscode2session?appid=wx714a3a721b4ac357&secret=aa4cf079cb1e15dcaa447310de52b710&js_code=JSCODE&grant_type=authorization_code';
-
 const authorization_code = {
-    authCode:function(appid,secret,jscode){
+    authCode:function(jscode){
         return new Promise((resolve,reject)=>{
-
-            axios.get(WXAPI)
+            let url = `https://api.weixin.qq.com/sns/jscode2session?appid=wx6e1a0c389a62339d&secret=d00115f424baf0a73ce0002031684a3c&js_code=${jscode}&grant_type=authorization_code`;
+            axios.get(url).then(res => {
+                resolve(res.data)
+            }).catch(err =>{
+                reject(err.response.data)
+            })
         })
     }
 }
+module.exports = authorization_code
