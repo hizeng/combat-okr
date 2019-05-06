@@ -15,7 +15,7 @@ router.get('/', indexController.indexRender)
 router.get('api/isbn',testController.info)
 
 // 用户登录
-console.log('ok')
+console.log('ok3')
 router.post('api/login',loginController.login)
 
 router.get('api/testapi',loginController.testapi)
