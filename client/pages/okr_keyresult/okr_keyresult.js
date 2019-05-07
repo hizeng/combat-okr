@@ -1,25 +1,28 @@
-let a = [1,2,3];
-
 Page({
     data:{
-        info:a
+        // info:a,
+        todoId:null
     },
-    // onLoad(){
-    //     this.setData({
-    //         info:a
+    onLoad(options){
 
-    //     })
+        // let todoid = 
 
-    //     console.log(this.info);
+        this.setData({
+           todoId : options.id
+        })
 
-    // },
+        console.log(options.id);
+
+    },
     handleClickResult:function(){
         wx.showModal({
             title:'关联提示',
             content:'确认关联？',
-            success(res){
+            success:(res)=>{
                 if (res.confirm){
                     //todo
+                    this.bindKeyResult();
+
                     wx.showToast({
                         title:'关联成功',
                         icon:'success',
@@ -29,5 +32,13 @@ Page({
                 }
             }
         })
+    },
+    // 关联keyResult
+
+    bindKeyResult:function(){
+
+        let todoid = this.data.todoId;
+
+        console.log(todoid)
     }
 })

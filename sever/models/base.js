@@ -22,7 +22,7 @@ class Base{
     }
 
     delete(id){
-        return knex(this.table),where('id','=',id).del()
+        return knex(this.table).where('id','=',id).del()
     }
 }
 

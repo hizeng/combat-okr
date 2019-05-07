@@ -4,7 +4,7 @@
     </view>
 
     <view class="todo_view">
-        <view class="todo_content"  bind:tap="handleClickTodo" wx:for="{{todoList}}" wx:key=
+        <view data-id="{{item.id}}" id ="{{item.id}}" class="todo_content"  bind:tap="handleClickTodo" wx:for="{{todoList}}" wx:key=
         "index">
             <text class="todo_name">{{item.content}}</text>
             <text class="todo_create_time">{{item.createTime}}</text>

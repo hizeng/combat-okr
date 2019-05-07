@@ -15,7 +15,6 @@ router.get('/', indexController.indexRender)
 router.get('api/isbn',testController.info)
 
 // 用户登录
-console.log('ok3')
 router.post('api/login',loginController.login)
 
 router.get('api/testapi',loginController.testapi)
@@ -23,6 +22,13 @@ router.get('api/testapi',loginController.testapi)
 router.get('api/pageapi',pageController.showSomething)
 
 router.get('api/todo',todoController.showAll);
+
+
+router.post('api/todo',todoController.createTodo);
+
+router.delete('api/todo',todoController.deleteTodo);
+
+router.put('api/bindstatus',todoController.bindStatus);
 
 // 获取 Todo 接口，GET： /api/todo
 // 添加 Todo 接口，POST：/api/todo
