@@ -1,19 +1,30 @@
 <view class="container">
     <view class="title">编辑okr</view>
-    <view class="view okr_create_view">
-        <view class="input_okr_create_view">
-            <input type="text" class="input_okr_create" placeholder="输入你的目标" value="okr默认值1"/>
-            <button type="default" class="input_button">+</button>
-        </view>
 
-        <view class="okr_create_content">
-            <input class="input_default_okr" type="text" 
-            placeholder="输入你的keyresult" value="keyresult默认值1"/>
-            <button type="default" class="input_button">-</button>
-        </view>
+    <view class="view okr_create_view">
+
+    <form bindsubmit="formSumbit" bindreset="formReset">
+        <scroll-view>
+            <view class="input_okr_create_view">
+                <input type="text" class="input_okr_create" placeholder="输入你的目标" value="{{okrContent}}" name="okrContent"/>
+                <button type="default" class="input_button" bind:tap="handleAdd">+</button>
+            </view>
+
+            <view class="okr_create_content" wx:for="{{keyresults}}" wx:key="{{item.index}}">
+                <input class="input_default_okr" type="text" 
+                placeholder="输入你的keyresult" value="{{item.content}}" name ="keyresults_{{item.id}}"/>
+                <button type="default" class="input_button" id="{{item.id}}" bind:tap="handleDelete">-</button>
+            </view>
+        </scroll-view>
 
         <view class="add_button">
-            <button type="default">保存</button>
-        </view>
+            <button type="default" formType="submit">保存</button>
+            <!-- <button fromType="reset">取消</button> -->
+            <button class = "btn_backout" type="default" bind:tap="handleBackout">返回</button>
+<!-- 
+             <button type="default" bind:tap="onBackout">返回1</button> -->
+        </view>        
+    </form>
+
     </view>
 </view>

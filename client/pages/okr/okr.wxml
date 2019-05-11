@@ -4,16 +4,15 @@
     </view>
 
     <view class="view okr_view">
-        <view class = "okr_content">
-            <view class="okr_item" bind:tap="handelClickOkr">
-                <text>这是一条okr的信息</text>
-            </view>
+        <!-- 新增okr子项 -->
+        <view class = "create_button_view" >
+            <button bind:tap="handelClickCreate">新建okr</button>
         </view>
 
-
-    <!-- 新增okr子项 -->
-        <view class = "create_button_view" >
-            <button bind:tap="handelClickCreate">确认新建</button>
+        <view class = "okr_content">
+            <view class="okr_item" bind:tap="handelClickOkr" wx:for="{{okrsInfo}}" wx:key="index" id="{{item.id}}">
+                <text  data-okrContent="{{item.content}}">{{item.content}}</text>
+            </view>
         </view>
     </view>
 </view>

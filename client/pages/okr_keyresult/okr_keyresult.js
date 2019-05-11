@@ -1,34 +1,49 @@
 Page({
     data:{
         // info:a,
+        keyresults:[],
+        keyresultId:null,
         todoId:null
     },
     onLoad(options){
 
-        // let todoid = 
+        wx.request({
+            url:'http://localhost:3000/api/keyresults',
+            header: {
+            'content-type': 'application/json',
+            },
+            method:'GET',
+            success:res=>{
+
+                console.log(res.data.data);
+                this.setData({
+                    keyresults: res.data.data
+                })
+            }
+        })
 
         this.setData({
            todoId : options.id
         })
 
-        console.log(options.id);
-
     },
-    handleClickResult:function(){
+    // updateKeyResults:function(){
+    //     this.setData()
+    // },
+    handleClickResult:function(event){
+
+        this.setData({
+            keyresultId: event.currentTarget.id
+        });
+
         wx.showModal({
             title:'关联提示',
             content:'确认关联？',
             success:(res)=>{
                 if (res.confirm){
-                    //todo
+
                     this.bindKeyResult();
 
-                    wx.showToast({
-                        title:'关联成功',
-                        icon:'success',
-                        duration:2000
-
-                    })
                 }
             }
         })
@@ -39,6 +54,26 @@ Page({
 
         let todoid = this.data.todoId;
 
-        console.log(todoid)
+        let keyresultid = this.data.keyresultId;
+
+        wx.request({
+            url:'http://localhost:3000/api/bindkeyresult',
+            data:{
+                todoId:todoid,
+                keyresultId:keyresultid
+            },
+            method:'PUT',
+            success:res=>{
+                console.log(res);
+                
+                wx.showToast({
+                    title:'关联成功',
+                    icon:'success',
+                    duration:2000
+
+                })                
+            }
+        })
+
     }
 })

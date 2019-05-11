@@ -1,17 +1,25 @@
 <view class="container">
     <view class="title">添加okr</view>
-    <view class="view okr_create_view">
-        <view class="input_okr_create_view">
-            <input type="text" class="input_okr_create" placeholder="输入你的目标"/>
-        </view>
+    
+        <view class="view okr_create_view">
+            <form bindsubmit="formSubmit" bindreset="formReset">
+                <view class="input_okr_create_view" >
+                    <input  name="inputObj" type="text" class="input_okr_create" placeholder="输入你的目标"/>
+                </view>
 
-        <view class="okr_create_content">
-            <input class="input_default_okr" type="text" 
-            placeholder="输入你的keyresult"/>
-        </view>
+                <view class="okr_create_content">
+                    <input name="inputKr" class="input_default_okr" type="text" 
+                    placeholder="输入你的keyresult"/>
+                </view>
 
-        <view class="add_button">
-            <button type="default">新增okr</button>
+                <view class="add_button">
+                    <!-- <button type="default">保存okr</button> -->
+                    <button formType="submit">保存</button>
+                    
+                    <button formType="reset">重设</button>
+
+                    <button type="default" bind:tap="onBackout">返回</button>
+                </view>
+            </form>
         </view>
-    </view>
 </view>

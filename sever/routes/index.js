@@ -6,6 +6,10 @@ const indexController = require('../controllers/index.js');
 const testController = require('../controllers/test.js');
 const loginController = require('../controllers/login.js');
 const todoController = require('../controllers/todo.js');
+const keyresultsController = require('../controllers/keyresults.js');
+
+const okrsController = require('../controllers/okr.js');
+
 const pageController = require('../controllers/page.js');
 
 const cors = require('./../middlewares/cors');
@@ -26,9 +30,32 @@ router.get('api/todo',todoController.showAll);
 
 router.post('api/todo',todoController.createTodo);
 
-router.delete('api/todo',todoController.deleteTodo);
+// router.delete('api/todoStatus',todoController.deleteTodo);
+
+router.delete('api/todo/:id',todoController.deleteTodo);
 
 router.put('api/bindstatus',todoController.bindStatus);
+
+router.get('api/keyresults',keyresultsController.showKeyResults);
+
+router.put('api/bindkeyresult',keyresultsController.bindKeyResults);
+
+router.post('api/keyresults',keyresultsController.createKeyResults);
+
+router.delete('api/keyresults/:id',keyresultsController.deleteKeyResultItem)
+
+router.get('api/okr',okrsController.showOkrs);
+
+router.put('api/okr/:id',okrsController.editOkr);
+
+router.post('api/okr',okrsController.createOkr);
+
+router.delete('api/okr/:id',okrsController.deleteOkr);
+
+router.get('api/okr/:id',okrsController.showOkrItem);
+
+
+
 
 // 获取 Todo 接口，GET： /api/todo
 // 添加 Todo 接口，POST：/api/todo

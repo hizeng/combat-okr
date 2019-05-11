@@ -47,7 +47,7 @@ const todoController = {
     deleteTodo: async (ctx,next)=>{
 
         let id = ctx.request.body.id;
-
+        
         try{
 
             await todoModel.delete(id);

@@ -1,8 +1,8 @@
 <view class="container">
     <view class="title">关联keyresult</view>
     <view class="view keyresult_view">
-        <button class="keyresult_content" style="{{bgStyle}}" hover-class="hover_kr_content" bind:tap="handleClickResult" wx:for="{{info}}" wx:key="index">
-            这是第{{item}}keyresult子项
+        <button class="keyresult_content" style="{{bgStyle}}" hover-class="hover_kr_content" bind:tap="handleClickResult" wx:for="{{keyresults}}" wx:key="index" id="{{item.id}}">
+           {{item.content}}
         </button>    
     </view>
 </view>

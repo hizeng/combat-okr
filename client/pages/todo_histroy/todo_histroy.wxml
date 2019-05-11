@@ -4,8 +4,8 @@
     </view>
 
     <view class=" view todo_histroy_view">
-        <view class="todo_histroy_content">
-            <text>这里是todo_histroy内容</text>
+        <view class="todo_histroy_content" id ="{{item.id}}" bind:tap="handleClickTodoItem" wx:for="{{doneTodos}}" wx:key="index">
+            <text >{{item.content}}</text>
         </view>
     </view>
 

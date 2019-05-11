@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+      doneTodos:[]
   },
 
   /**
@@ -13,6 +13,119 @@ Page({
    */
   onLoad: function (options) {
 
+    this.updateTodo()
+  },
+
+ // 更新todo
+
+ updateTodo:function(){
+
+    wx.request({
+      url:'http://localhost:3000/api/todo',
+      header:{
+        'content-type':'application/json'
+      },
+      method:"GET",
+      success:res=>{
+
+        this.showTodoDone(res.data.data);
+
+      }
+    })
+ },
+
+ //显示完成todo
+ showTodoDone:function(todos){
+    let data = [];
+
+    todos.forEach(item =>{
+      if(item.status === 0){
+        data.push(item)
+      }
+    })
+    this.setData({
+      doneTodos:data
+    })
+ },
+
+ handleClickTodoItem:function(event){
+
+   let todoId = event.currentTarget.id;
+
+   wx.showActionSheet({
+     itemList:['标记没完成','删除'],
+     success:(res)=>{
+       switch(res.tapIndex){
+         case 0:
+         this.markDoing(todoId);
+         break;
+         case 1:
+         this.deleteTodo(todoId);
+         break;
+         default:
+         break;
+
+       }
+     },
+     fail(res){
+       console.log(res.errMsg)
+     }
+   })
+
+  },
+  //标记没完成
+  markDoing:function(todoId){
+    wx.showModal({
+      title:"标记没完成",
+      content:'是否标记完成',
+      success:(res)=>{
+        wx.request({
+          url:'http://localhost:3000/api/bidnstatus',
+          data:{
+            id:todoId,
+            status:1
+          },
+          method:'PUT',
+          success:(res)=>{
+            this.updateTodo();
+          }
+        })
+      }
+    })
+  },
+
+  deleteTodo:function(todoId){
+    wx.showModal({
+      title:'删除todo',
+      content:'是否删除已完成todo？',
+      success:(res)=>{
+        if(res.confirm){
+          try{
+            wx.request({
+              url:`http://localhost:3000/api/todo/${todoId}`,
+              header:{
+                'content-type':'application/json'
+              },
+              data:{
+                id:todoId
+              },
+              method:'DELETE',
+              success:(res)=>{
+                this.updateTodo();
+              }
+            })
+          }catch(err){
+            console.log(err);
+          }
+
+          wx.showToast({
+            title:'删除成功',
+            icon:'success',
+            duration:2000
+          })
+        }
+      }
+    })
   },
 
   /**

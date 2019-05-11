@@ -109,7 +109,7 @@ Page({
         }
       })   
   },
-  // 删除标记
+  // 删除todo
   deleteTodo:function(todoId){
     wx.showModal({
       title:'删除todo',
@@ -119,7 +119,12 @@ Page({
 
          try{
           wx.request({
-            url:'http://localhost:3000/api/todoStatus',
+            // url:'http://localhost:3000/api/todoStatus',
+            //常规通过url传值 :id
+            url:`http://localhost:3000/api/todo/${todoId}`,
+            header: {
+              'content-type': 'application/json' // 默认值
+            },
             data:{
               id:todoId
             },
@@ -180,13 +185,13 @@ Page({
          let todos = res.data.data;
 
          // 过滤todo状态
-         this.showTodoDone(todos); 
+         this.showTodoDoing(todos); 
       }
     })
   },
 
-  // 显示已经完成todo
-  showTodoDone:function(todos){
+  // 显示没完成todo
+  showTodoDoing:function(todos){
 
     let data = [];
 

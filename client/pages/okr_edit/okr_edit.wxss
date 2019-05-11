@@ -30,3 +30,6 @@
     position: absolute;
     bottom: 50rpx;
 }
+.btn_backout{
+    margin-top:20rpx;
+}

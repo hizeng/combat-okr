@@ -1,16 +1,23 @@
 .okr_view{
-
+margin-top:120rpx;
 }
 .okr_content{
-    width: 80%;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    margin: 
+    line-height: 100rpx;
+}
+.okr_item{
+    width: 100%;
     height: 100rpx;
     background-color: #ccc;
-    margin: 0 auto;
+    margin-top:10rpx;
     line-height: 100rpx;
 }
 .create_button_view{
     position: absolute;
-    bottom: 0;
+    top: 110rpx;
     width: 80%;
     height: 100rpx;
     margin: 0 auto;
